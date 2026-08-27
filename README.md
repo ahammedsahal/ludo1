@@ -1,32 +1,20 @@
 # Ludo.io
 
-A mobile-first real-time multiplayer Ludo MVP with a polished competitive `.io` interface.
+A mobile-first, server-authoritative real-time multiplayer Ludo game.
 
-## Current MVP
+## Included
 
-- Landing, create room, join room, and random matchmaking flows
-- Responsive Ludo game board with player HUD, turn timer, dice interaction, and voice controls
-- Server-authoritative room lifecycle, turns, and dice generation
-- Socket.IO real-time state synchronization
-- 30-second disconnect reservation and reconnect-ready player state
-- WebRTC signaling event boundary for future peer voice connections
+- 2–4 player private rooms with generated `LUDO-XXXX` codes
+- Optional room passwords, locking, host kick and ready/start flow
+- Random matchmaking queue
+- Server-side dice, turns, legal move validation, captures, safe cells and win detection
+- Six/capture bonus turns and 20-second turn timer
+- Animated responsive board and legal-move highlighting
+- Disconnect reservation and reconnecting status
+- WebRTC peer voice signaling with microphone permission and mute state
+- Rematch flow
 
-## Stack
-
-- Client: React, TypeScript, Vite, Framer Motion
-- Server: Node.js, Express, Socket.IO
-- Voice: WebRTC signaling over Socket.IO
-- Production-ready next steps: Redis, PostgreSQL, HTTPS/WSS, dedicated game state persistence
-
-## Run locally
-
-### Client
-
-```bash
-cd client
-npm install
-npm run dev
-```
+## Development
 
 ### Server
 
@@ -35,5 +23,19 @@ cd server
 npm install
 npm run dev
 ```
+Runs on `http://localhost:3001`.
 
-The server listens on port `3001` by default.
+### Client
+
+```bash
+cd client
+npm install
+npm run dev
+```
+Runs on `http://localhost:5173`.
+
+Set `VITE_SERVER_URL` if the game server is hosted elsewhere.
+
+## Production
+
+Use HTTPS/WSS for microphone access, run the server behind a reverse proxy, and replace the in-memory room/matchmaking maps with Redis for horizontal scaling. PostgreSQL can be added for accounts and persistent profiles without changing the game protocol.
