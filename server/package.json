@@ -1,0 +1,1 @@
+{"name":"ludo-io-server","private":true,"version":"0.1.0","type":"module","scripts":{"dev":"tsx src/index.ts","build":"tsc","start":"node dist/index.js"},"dependencies":{"cors":"latest","express":"latest","socket.io":"latest"},"devDependencies":{"@types/express":"latest","@types/node":"latest","tsx":"latest","typescript":"latest"}}
