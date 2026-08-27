@@ -1,0 +1,1 @@
+{"name":"ludo-io-client","private":true,"version":"0.1.0","type":"module","scripts":{"dev":"vite","build":"tsc -b && vite build","preview":"vite preview"},"dependencies":{"@vitejs/plugin-react":"latest","framer-motion":"latest","react":"latest","react-dom":"latest","socket.io-client":"latest"},"devDependencies":{"typescript":"latest","vite":"latest"}}
